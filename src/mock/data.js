@@ -23,7 +23,7 @@ export const aboutData = {
     'I have solid background in web development, with master degree from University of Waterloo. After graduation, I was provided a full-time position to work as a front-end developer at SomoPlay. Working in SomoPlay provided me enriched experience in programming languages, frameworks, and services.',
   paragraphThree:
     'At present stage, I am looking for front-end/full-stack jobs with prime focus on building responsive wesites.',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+  resume: 'https://drive.google.com/file/d/10yBA_BUF8RDbnd0Eo4YkRp37LOi2DdLA/view?usp=sharing', // if no resume, the button will not show up
 };
 
 // PROJECTS DATA
@@ -42,7 +42,7 @@ export const projectsData = [
   },
   {
     id: nanoid(),
-    img: 'UserSignOrderPage.png',
+    img: 'project1',
     title: 'Andy Express',
     info:
       'Andy Express is an express platform website with business focus on shipping goods from China to Canada.',
