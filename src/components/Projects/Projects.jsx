@@ -22,13 +22,16 @@ const Projects = () => {
     }
   }, []);
 
+  const paraStyle = { 'text-align': 'justify' };
+  const keyWordStyle = { 'font-size': '18px', color: '#02aab0' };
+  const linkStyle = { 'background-color': '#02aab0' };
   return (
     <section id="projects">
       <Container>
         <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
-            const { title, info, info2, url, img, id, keyword } = project;
+            const { title, info, info2, url, img, id, keyword, demourl } = project;
 
             return (
               <Row key={id}>
@@ -41,34 +44,24 @@ const Projects = () => {
                     distance="30px"
                   >
                     <div className="project-wrapper__text">
-                      <h3 className="cta-btn text-color-main">{title || 'Project Title'}</h3>
-                      <div>
-                        <p>
-                          {info ||
-                            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
-                        </p>
-                        <p className="mb-4">{info2 || ''}</p>
-                        <p className="cta-btn">{keyword}</p>
-                      </div>
-                      {/* <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-btn cta-btn--hero"
-                        href={url || '#!'}
-                      >
-                        See Live
-                      </a> */}
+                      <h3 className="cta-btn text-color-main">{title}</h3>
+                      <div style={paraStyle}>
+                        <p>{info}</p>
+                        <p className="mb-4">{info2}</p>
+                        <p style={keyWordStyle}>{keyword}</p>
 
-                      {/* {repo && (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cta-btn text-color-main"
-                          href={repo}
-                        >
-                          Source Code
-                        </a>
-                      )} */}
+                        <div className="d-flex mt-3">
+                          <a
+                            style={linkStyle}
+                            rel="noopener noreferrer"
+                            className="cta-btn cta-btn--resume"
+                            target="_blank"
+                            href={demourl}
+                          >
+                            Visit Demo
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </Fade>
                 </Col>

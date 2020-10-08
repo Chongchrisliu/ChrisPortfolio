@@ -21,7 +21,8 @@ const About = () => {
       setIsDesktop(false);
     }
   }, []);
-
+  const paraStyle = { 'margin-top': '18px', 'text-align': 'justify' };
+  const linkCenterStyle = { position: 'relative', margin: '0' };
   return (
     <section id="about">
       <Container>
@@ -37,20 +38,17 @@ const About = () => {
           <Col md={6} sm={12}>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
-                <p className="about-wrapper__info-text">
-                  {paragraphOne ||
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
+                <p className="about-wrapper__info-text">{paragraphOne}</p>
+                <p style={paraStyle} className="about-wrapper__info-text">
+                  {paragraphTwo}
                 </p>
-                <p className="about-wrapper__info-text">
-                  {paragraphTwo ||
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
-                </p>
-                <p className="about-wrapper__info-text">
-                  {paragraphThree || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'}
+                <p style={paraStyle} className="about-wrapper__info-text">
+                  {paragraphThree}
                 </p>
                 {resume && (
-                  <span className="d-flex mt-3">
+                  <div className="d-flex mt-3">
                     <a
+                      style={linkCenterStyle}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cta-btn cta-btn--resume"
@@ -58,7 +56,7 @@ const About = () => {
                     >
                       Resume
                     </a>
-                  </span>
+                  </div>
                 )}
               </div>
             </Fade>
